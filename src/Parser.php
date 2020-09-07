@@ -175,7 +175,7 @@ class Parser
      *
      * @return string
      */
-    private function parseStringJobSyntax($match, $contents)
+    protected function parseStringJobSyntax($match, $contents)
     {
         $slash = strrpos($match, '\\');
         if ($slash !== false) {
@@ -194,7 +194,7 @@ class Parser
      *
      * @return string
      */
-    private function parseKeywordJobSyntax($match, $contents)
+    protected function parseKeywordJobSyntax($match, $contents)
     {
         // is it of the form \Full\Name\Space::class?
         // (using full namespace in-line)
@@ -225,7 +225,7 @@ class Parser
      *
      * @return string
      */
-    private function parseInitJobSyntax($match, $contents)
+    protected function parseInitJobSyntax($match, $contents)
     {
         // remove the 'new ' from the beginning.
         $match = str_replace('new ', '', $match);
@@ -259,7 +259,7 @@ class Parser
      *
      * @return string
      */
-    private function domainForJob($namespace)
+    protected function domainForJob($namespace)
     {
         preg_match('/Domains\\\([^\\\]*)\\\Jobs/', $namespace, $domain);
 
@@ -281,7 +281,7 @@ class Parser
      *
      * @return string
      */
-    private function filterJobMatch($match)
+    protected function filterJobMatch($match)
     {
         // we don't want any quotes
         return str_replace(['"', "'"], '', $match);
@@ -299,7 +299,7 @@ class Parser
      *
      * @return string
      */
-    private function jobSyntaxStyle($match)
+    protected function jobSyntaxStyle($match)
     {
         if (strpos($match, '::class') !== false) {
             $style = self::SYNTAX_KEYWORD;

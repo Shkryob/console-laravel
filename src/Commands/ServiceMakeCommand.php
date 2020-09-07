@@ -32,14 +32,14 @@ class ServiceMakeCommand extends SymfonyCommand
      *
      * @var string
      */
-    private $namespace;
+    protected $namespace;
 
     /**
      * The Services path.
      *
      * @var string
      */
-    private $path;
+    protected $path;
 
     /**
      * The console command name.

@@ -62,7 +62,7 @@ class LucidServiceProvider extends ServiceProvider
      *
      * @return string
      */
-    private function getConfigPath()
+    protected function getConfigPath()
     {
         return config_path('lucid.php');
     }

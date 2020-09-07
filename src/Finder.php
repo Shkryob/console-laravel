@@ -84,7 +84,7 @@ trait Finder
      *
      * @return bool
      */
-    private function sortFuzzyResults(&$results)
+    protected function sortFuzzyResults(&$results)
     {
         return usort($results, function ($resultLeft, $resultRight) {
             return $resultLeft[1] < $resultRight[1];
@@ -99,7 +99,7 @@ trait Finder
       *
       * @return array
       */
-     private function mapFuzzyResults($results)
+     protected function mapFuzzyResults($results)
      {
          return array_map(function ($result) {
             return $result[0];

@@ -77,7 +77,7 @@ class FeatureGenerator extends Generator
      * @param  string $feature
      * @param  string $service
      */
-    private function generateTestFile($feature, $service)
+    protected function generateTestFile($feature, $service)
     {
     	$content = file_get_contents($this->getTestStub());
 
@@ -111,7 +111,7 @@ class FeatureGenerator extends Generator
      *
      * @return string
      */
-    private function getTestStub()
+    protected function getTestStub()
     {
     	return __DIR__.'/stubs/feature-test.stub';
     }

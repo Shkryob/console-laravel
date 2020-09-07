@@ -66,7 +66,7 @@ class JobGenerator extends Generator
      * @param string $job
      * @param string $domain
      */
-    private function generateTestFile($job, $domain)
+    protected function generateTestFile($job, $domain)
     {
         $content = file_get_contents($this->getTestStub());
 
@@ -90,7 +90,7 @@ class JobGenerator extends Generator
      *
      * @param string $domain
      */
-    private function createDomainDirectory($domain)
+    protected function createDomainDirectory($domain)
     {
         $this->createDirectory($this->findDomainPath($domain).'/Jobs');
         $this->createDirectory($this->findDomainTestsPath($domain).'/Jobs');

@@ -77,7 +77,7 @@ class OperationGenerator extends Generator
      * @param string $operation
      * @param string $service
      */
-    private function generateTestFile($operation, $service)
+    protected function generateTestFile($operation, $service)
     {
         $content = file_get_contents($this->getTestStub());
 
@@ -117,7 +117,7 @@ class OperationGenerator extends Generator
      *
      * @return string
      */
-    private function getTestStub()
+    protected function getTestStub()
     {
         return __DIR__.'/stubs/operation-test.stub';
     }
